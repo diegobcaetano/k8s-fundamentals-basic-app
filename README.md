@@ -26,3 +26,7 @@ To configure the database you can use the following env vars:
 | `DB_PASSWORD`                   | The user password                          |
 | `DB_ACQUIRE_CONNECTION_TIMEOUT` | The timeout for acquiring a new connection |
  | `DB_POOL_SIZE`                  | The max number of connections              |
+
+### More about
+
+The image ready for use is in: [Docker Hub Image](https://hub.docker.com/r/diegobc/fundamentals.basic-app)
