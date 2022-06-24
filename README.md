@@ -1,5 +1,4 @@
 # k8s-fundamentals-basic-app
-___
 
 ### Description
 
@@ -26,6 +25,8 @@ To configure the database you can use the following env vars:
 | `DB_PASSWORD`                   | The user password                          |
 | `DB_ACQUIRE_CONNECTION_TIMEOUT` | The timeout for acquiring a new connection |
  | `DB_POOL_SIZE`                  | The max number of connections              |
+
+___
 
 ### More about
 
