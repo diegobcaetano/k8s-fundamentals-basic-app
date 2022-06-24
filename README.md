@@ -3,7 +3,8 @@ ___
 
 ### Description
 
-This simple HTTP API was built for k8s training purposes. You can pratice:
+This simple HTTP API was built for k8s training purposes. The API is available at the port `3000`.
+You can use this to practice:
 
 #### Liveness and Readiness
 
