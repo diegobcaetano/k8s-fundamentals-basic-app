@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: basic-app
+  name: k8s-fundamentos-basic-app-deployment
+  labels:
+    app: k8s-fundamentos-basic-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-fundamentos-basic-app
+  template:
+    metadata:
+      labels:
+        app: k8s-fundamentos-basic-app
+    spec:
+      containers:
+      - name: k8s-fundamentos-basic-app-container
+        image: diegobc/fundamentals.basic-app:latest
+        resources:
+          limits:
+            cpu: 300m
+            memory: 160Mi
+          requests:
+            cpu: 200m
+            memory: 128Mi
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: k8s-fundamentos-basic-app-configmap
+        - secretRef:
+            name: k8s-fundamentos-basic-app-secret
+
+        # env:
+        #   - name: DB_HOST2
+        #     valueFrom:
+        #       secretKeyRef:
+        #         key: DB_HOST
+        #         name: k8s-fundamentos-basic-app-configmap
