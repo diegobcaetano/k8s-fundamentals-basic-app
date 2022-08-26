@@ -1,0 +1,26 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2
+metadata:
+  name: k8s-fundamentos-basic-app-hpa
+  namespace: basic-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: k8s-fundamentos-basic-app-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    # - type: Pods
+    #   pods:
+    #     metric:
+    #       name: cart_visited_per_second
+    #     target:
+    #       type: AverageValue
+    #       averageValue: 100m
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70

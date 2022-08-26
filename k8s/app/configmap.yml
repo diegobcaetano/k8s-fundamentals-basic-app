@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-fundamentos-basic-app-configmap
+  namespace: basic-app
+data:
+  DB_POOL_SIZE: "5"
+  DB_ACQUIRE_CONNECTION_TIMEOUT: "20000"
+  DB_HOST: "mysql.database"
